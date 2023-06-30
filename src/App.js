@@ -3,7 +3,14 @@ import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
 
-const socket = io.connect("https://chat-app-lemon-eight.vercel.app");
+// const socket = io.connect("http://localhost:3001");
+
+const socket = io("https://chat-app-lemon-eight.vercel.app", {
+  withCredentials: true,
+  extraHeaders: {
+    "my-custom-header": "abcd",
+  },
+});
 
 function App() {
   const [userName, setUserName] = useState("");
