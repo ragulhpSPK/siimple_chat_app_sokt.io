@@ -3,11 +3,7 @@ import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
 
-const socket = io.connect("https://chat-app-server-lime.vercel.app/", {
-  cors: {
-    origin: ["https://chat-app-lemon-eight.vercel.app"],
-  },
-});
+const socket = io.connect("https://chat-app-server-lime.vercel.app");
 
 function App() {
   const [userName, setUserName] = useState("");
